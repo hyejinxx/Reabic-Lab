@@ -19,10 +19,7 @@ require('dotenv').config(); // load environment variables from .env file
 // connect to MongoDB
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/mydatabase';
   
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect(mongoURI).then(() => {
     console.log('MongoDB 연결 성공');
 }).catch((error) => {
     console.error('MongoDB 연결 실패:', error);
